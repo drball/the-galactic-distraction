@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+Created with Squiffy 3.0.0
+
+
+https://github.com/textadventures/squiffy
+
+-->
+	<head>
+		<title>The Galactic Distraction</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script src="jquery.min.js"></script>
+		<script src="story.js"></script>
+		
+		<script>
+			$(function(){
+				$('#squiffy').squiffy();
+				$('#restart').click(function () {
+					$('#squiffy').squiffy('restart');
+				});
+			});
+		</script>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<div id="squiffy-container">
+			<div id="squiffy-header">
+				<a class="squiffy-header-link" id="restart">Restart</a>
+			</div>
+			<div id="squiffy">
+			</div>
+		</div>
+	</body>
+</html>
