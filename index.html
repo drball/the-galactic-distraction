@@ -2,7 +2,7 @@
 <html>
 <!--
 
-Created with Squiffy 3.0.0
+Created with Squiffy 5.1.0
 
 
 https://github.com/textadventures/squiffy
@@ -12,13 +12,18 @@ https://github.com/textadventures/squiffy
 		<title>The Galactic Distraction</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<script src="jquery.min.js"></script>
-		<script src="story.js"></script>
+		<script src="story.js" charset="UTF-8"></script>
 		
 		<script>
-			$(function(){
+			jQuery(function($){
 				$('#squiffy').squiffy();
-				$('#restart').click(function () {
+				var restart = function () {
 					$('#squiffy').squiffy('restart');
+				};
+				$('#restart').click(restart);
+				$('#restart').keypress(function (e) {
+					if (e.which !== 13) return;
+					restart();
 				});
 			});
 		</script>
@@ -27,7 +32,7 @@ https://github.com/textadventures/squiffy
 	<body>
 		<div id="squiffy-container">
 			<div id="squiffy-header">
-				<a class="squiffy-header-link" id="restart">Restart</a>
+				<a class="squiffy-header-link" id="restart" tabindex="0">Restart</a>
 			</div>
 			<div id="squiffy">
 			</div>
